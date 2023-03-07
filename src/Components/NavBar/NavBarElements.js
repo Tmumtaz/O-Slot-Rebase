@@ -1,4 +1,3 @@
-import styles from 'styled-components'
 import { NavLink as Link } from 'react-router-dom';
 import {FaBars} from 'react-icons/fa'
 import styled from 'styled-components';
@@ -44,7 +43,9 @@ export const Bars = styled(FaBars)`
 export const NavMenu = styled.div`
     display: flex;
     align-items: center;
-    margin-right: -24px;
+    ${'' /* margin-right: -24px; */}
+
+    margin-right: 24px
 
 
     @media screen and (max-width:768px){
@@ -64,8 +65,8 @@ export const NavBtn = styled.nav`
 
 export const NavBtnLink = styled(Link)`
     border-radius: 4px;
-    background: #256c1;
-    padding: 10px;
+    background-color: #256ce1;
+    padding: 10px 22px;
     color: #fff;
     border:none;
     outline: none;
@@ -73,7 +74,7 @@ export const NavBtnLink = styled(Link)`
     transition: all 0.2s ease-in-out;
     text-decoration: none;
 
-    $:hover {
+    &:hover {
         transition: all 0.2s ease-in-out;
         background: #fff;
         color: #010606;
