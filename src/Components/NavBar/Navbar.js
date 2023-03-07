@@ -1,5 +1,6 @@
 import React from "react";
 import { Nav, NavLink, Bars, NavMenu, NavBtn, NavBtnLink } from './NavBarElements'
+import { FaInfoCircle } from 'react-icons/fa'
 
 const Navbar = () => {
   return (
@@ -10,6 +11,9 @@ const Navbar = () => {
             </NavLink>
             <Bars />
             <NavMenu>
+                <NavLink to="/" activeStyle>
+                    Home
+                </NavLink>
                 <NavLink to="/about" activeStyle>
                     About
                 </NavLink>
