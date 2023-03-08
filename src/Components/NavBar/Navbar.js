@@ -1,39 +1,40 @@
-import React from "react";
-import { Nav, NavLink, Bars, NavMenu, NavBtn, NavBtnLink } from './NavBarElements'
-import { FaInfoCircle } from 'react-icons/fa'
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import "./NavBar.Styles.scss";
+import { MenuItems } from "./MenuItems";
 
-const Navbar = () => {
-  return (
-      <>
-        <Nav>
-            <NavLink to="/">
-                <h1>LOGO</h1>
-            </NavLink>
-            <Bars />
-            <NavMenu>
-                <NavLink to="/" activeStyle>
-                    Home
-                </NavLink>
-                <NavLink to="/about" activeStyle>
-                    About
-                </NavLink>
-                <NavLink to="/services" activeStyle>
-                    Services
-                </NavLink>
-                <NavLink to="/contact" activeStyle>
-                    Contact
-                </NavLink>
-                <NavLink to="/sign-up" activeStyle>
-                    Sign Up
-                </NavLink>
-            </NavMenu>
-            <NavBtn>
-                <NavBtnLink to="/signIn">Sign In</NavBtnLink>
-            </NavBtn>
-        </Nav>
-      </>
-  ) 
-  
-};
+class Navbar extends Component {
+  state = { clicked: false };
+
+  handleClick = () => {
+    this.setState({ clicked: !this.state.clicked });
+  };
+
+  render() {
+    return (
+      <nav className="NavbarItems">
+        <h1 className="navbar-logo">O' Slot</h1>
+        <div className="menu-icons" onClick={this.handleClick}>
+          <i
+            className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}
+          ></i>
+        </div>
+        <ul className={this.state.clicked ? "nav-menu active" : "nav-menu" }>
+          {MenuItems.map((item, index) => {
+            return (
+              <li key={index}>
+                <a className={item.cName} href="/">
+                  <i className={item.icon}></i>
+                  {item.title}
+                </a>
+              </li>
+            );
+          })}
+          <button>Sign Up</button>
+        </ul>
+      </nav>
+    );
+  }
+}
 
 export default Navbar;

@@ -1,0 +1,14 @@
+.footer{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 8px;
+    background-color: black;
+    height: 60px;
+    padding-left: 0.5rem;
+    
+
+    h3{
+        color: white;
+    }
+}
