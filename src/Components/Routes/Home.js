@@ -9,6 +9,8 @@ const Home = () => {
         title="Start Your Jounrey"
         btnName="Book Now"
         btnClass="book"
+        imageName = {require("../../Assets/HomeHero.jpg")}
+        text="hello"
          />
         </>
     )
