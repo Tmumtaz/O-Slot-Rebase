@@ -12,10 +12,10 @@ const About = () => {
       />
         <h1>About us</h1>
       <div className="content-container">
-        
+      
         
         <div className="text-container">
-            <h3>Heading 1</h3>
+            <h2>Heading 1</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -26,7 +26,7 @@ const About = () => {
           </p>
         </div>
         <div className="text-container">
-            <h3>Heading 2</h3>
+        <h2>Heading 1</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -37,7 +37,7 @@ const About = () => {
           </p>
         </div>
         <div className="text-container">
-            <h3>Heading 3</h3>
+        <h2>Heading 1</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
