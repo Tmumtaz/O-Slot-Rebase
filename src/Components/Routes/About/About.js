@@ -10,12 +10,10 @@ const About = () => {
         cName="hero-secondary"
         imageName={require("../../../Assets/aboutHero.jpg")}
       />
-        <h1>About us</h1>
+      <h1>About us</h1>
       <div className="content-container">
-      
-        
         <div className="text-container">
-            <h2>Heading 1</h2>
+          <h2>Heading 1</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -26,7 +24,7 @@ const About = () => {
           </p>
         </div>
         <div className="text-container">
-        <h2>Heading 1</h2>
+          <h2>Heading 1</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -37,7 +35,7 @@ const About = () => {
           </p>
         </div>
         <div className="text-container">
-        <h2>Heading 1</h2>
+          <h2>Heading 1</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim

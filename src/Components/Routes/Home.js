@@ -1,5 +1,6 @@
 import Navbar from "../NavBar/Navbar";
 import Hero from "../Hero/Hero";
+import Footer from "../Footer/Footer";
 
 const Home = () => {
     return(
@@ -11,6 +12,7 @@ const Home = () => {
         btnClass="book"
         imageName = {require("../../Assets/HomeHero.jpg")}
          />
+         <Footer />
         </>
     )
 }

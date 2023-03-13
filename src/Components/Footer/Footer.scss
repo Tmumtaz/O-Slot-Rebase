@@ -1,14 +1,50 @@
 .footer{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    border-radius: 8px;
+    padding: 1rem 6rem;
     background-color: black;
-    height: 60px;
-    padding-left: 0.5rem;
-    
+    color: white;
+    border: 5px solid white;
+    border-radius: 13px;
 
-    h3{
-        color: white;
+    .top{
+        display: flex;
+        align-items: center;
+        text-align: start;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        i{
+            color: white;
+            font-size: 3rem;
+            margin-left: 1rem ;
+        }
+
+        i:hover{
+            color: rgb(177, 177, 177);
+        }
+    }
+
+    .bottom{
+        padding-top: 1rem;
+        text-align: start;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        div{
+            display: flex;
+            flex-direction: row;
+
+            a{
+                color: white;
+                text-decoration: none;
+                margin-right: 1.5rem;
+                font-size: 1.1rem;
+            }
+
+            a:hover{
+                color: rgb(221, 217, 217);
+                text-decoration: underline;
+            }
+        }
     }
 }
