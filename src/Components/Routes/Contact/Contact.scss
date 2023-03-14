@@ -19,7 +19,7 @@
   .content-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: flex-start;
     // border: 3px solid black;
     margin: 0 1.5rem;
@@ -51,6 +51,12 @@
             p{
                 margin-left: 1rem ;
                 font-size: 1.2rem;
+            }
+
+
+            &:hover{
+                text-decoration: underline;
+                cursor: pointer;
             }
 
         }
