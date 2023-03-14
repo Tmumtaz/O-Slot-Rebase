@@ -50,11 +50,12 @@
         letter-spacing: 1px;
 
         &:hover {
-            background-color: rgb(197, 197, 197);
+            background-color: rgba(255, 251, 251, 0.781);
             color: rgb(0, 0, 0);
-            
             border-radius: 13px;
             transition: all 0.3s ease-in-out;
+            cursor: pointer;
+            opacity: 1;
           }
     }
 

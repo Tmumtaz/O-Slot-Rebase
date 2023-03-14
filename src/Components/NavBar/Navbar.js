@@ -1,10 +1,13 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./NavBar.Styles.scss";
 import { MenuItems } from "./MenuItems";
 
 class Navbar extends Component {
+  
+
   state = { clicked: false };
+  
 
   handleClick = () => {
     this.setState({ clicked: !this.state.clicked });
@@ -30,7 +33,7 @@ class Navbar extends Component {
               </li>
             );
           })}
-          <button>Sign Up</button>
+          
         </ul>
       </nav>
     );
