@@ -1,65 +1,61 @@
 .hero-secondary {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 60vh;
+  border: 5px solid white;
+  margin-bottom: 1rem;
+
+  img {
     width: 100%;
-    height: 60vh;
-    border: 5px solid white;
-    margin-bottom: 1rem;
-  
-    img {
-      width: 100%;
-      height: 100%;
-      border-radius: 13px;
-      object-fit: cover;
-    }
+    height: 100%;
+    border-radius: 13px;
+    object-fit: cover;
   }
-  
-  .content-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: flex-start;
-    // border: 3px solid black;
-    margin: 0 1.5rem;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  margin: 0 1.5rem 1rem 1.5rem;
+  padding: 1rem 1rem;
+
+  h1 {
+    font-size: 5rem;
+  }
+
+  .text-container {
+    display: row;
+    flex-direction: column;
     padding: 1rem 1rem;
-  
-    h1 {
-      font-size: 5rem;
-    }
-  
-    .text-container {
-    //   border: 1px solid red;
-      display: row;
-      flex-direction: column;
-      padding: 1rem 1rem;
-        ul li{
-            // border: 1px solid black;
-            text-decoration: none;
-            list-style: none;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            padding: 0.6rem 0;
+    ul li {
+      text-decoration: none;
+      list-style: none;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 0.6rem 0;
 
-            svg{
-               font-size: 1.6rem;
+      svg {
+        font-size: 1.6rem;
+        color: red;
+      }
 
-            }
-            
-            p{
-                margin-left: 1rem ;
-                font-size: 1.2rem;
-            }
+      p {
+        margin-left: 1rem;
+        font-size: 1.2rem;
+      }
 
-
-            &:hover{
-                text-decoration: underline;
-                cursor: pointer;
-            }
-
-        }
+      &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
     }
   }
+
   
+}

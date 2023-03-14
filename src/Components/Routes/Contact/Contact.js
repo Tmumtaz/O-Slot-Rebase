@@ -5,6 +5,7 @@ import { FcCallback, FcBusinessContact } from "react-icons/fc";
 import { GoLocation } from "react-icons/go";
 
 import ContactMap from "./Map";
+import Footer from "../../Footer/Footer";
 
 
 const Contact = () => {
@@ -19,7 +20,7 @@ const Contact = () => {
           <div className="content-container">
             <div className="text-container">
                 <ul>
-                    <li><FcCallback /><p>666-666-666</p></li>
+                    <li><FcCallback /><p>696-969-6969</p></li>
                     <li><FcBusinessContact /><p>example@example.com</p></li>
                     <li><GoLocation /><p>130 Dundas St, London, ON N6A 1G2</p></li>
                 </ul>
@@ -30,6 +31,7 @@ const Contact = () => {
             </div>
            
           </div>
+          <Footer />
         </>
       );
 }

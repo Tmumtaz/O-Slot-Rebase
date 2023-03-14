@@ -1,6 +1,7 @@
 import Navbar from "../../NavBar/Navbar";
 import Hero from "../../Hero/Hero";
 import "./About.scss";
+import Footer from "../../Footer/Footer";
 
 const About = () => {
   return (
@@ -46,6 +47,7 @@ const About = () => {
           </p>
         </div>
       </div>
+      <Footer />
     </>
   );
 };
