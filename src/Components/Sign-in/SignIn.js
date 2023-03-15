@@ -5,6 +5,7 @@ import { useState } from "react";
 import {auth} from '../../firebaseUtils'
 import { signInWithEmailAndPassword } from "firebase/auth";
 import SignUp from "./SignUp";
+import AuthDetails from "./AuthDetails";
 
 
 const SignIn = () => {
@@ -46,8 +47,9 @@ const SignIn = () => {
           />
           <button type="submit">Sign In</button>
         </form>
-        
+
         <SignUp />
+        <AuthDetails />
       </div>
 
     

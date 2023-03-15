@@ -1,5 +1,4 @@
-import Navbar from "../NavBar/Navbar";
-import Hero from "../Hero/Hero";
+
 import "./SignIn.scss";
 import { useState } from "react";
 import {auth} from '../../firebaseUtils'
@@ -13,9 +12,13 @@ const SignUp = () => {
 
     const handleSignUp = (event) => {
         event.preventDefault();
+        // form validations 
         createUserWithEmailAndPassword(auth, email, password)
         .then((userCredentials) => {
             console.log(userCredentials)
+            setEmail('')
+            setPassword('')
+            setConfirmPassword('')
         })
         .catch((error) => {
             console.log(error)
