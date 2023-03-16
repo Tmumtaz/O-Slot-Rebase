@@ -2,7 +2,7 @@ import Navbar from "../NavBar/Navbar";
 import Hero from "../Hero/Hero";
 import "./SignIn.scss";
 import { useState } from "react";
-import {auth} from '../../firebaseUtils'
+import {auth, signInWithGoogle} from '../../firebaseUtils'
 import { signInWithEmailAndPassword } from "firebase/auth";
 import SignUp from "./SignUp";
 import AuthDetails from "./AuthDetails";
@@ -47,6 +47,7 @@ const SignIn = () => {
           />
           <button type="submit">Sign In</button>
         </form>
+        <button onClick={signInWithGoogle}>Sign In with Google </button>
 
         <SignUp />
         <AuthDetails />

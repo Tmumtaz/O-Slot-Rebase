@@ -1,8 +1,10 @@
 
 import "./SignIn.scss";
 import { useState } from "react";
-import {auth} from '../../firebaseUtils'
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import {auth, googleProvider} from '../../firebaseUtils'
+import { createUserWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+
+
 
 const SignUp = () => {
 
@@ -16,6 +18,8 @@ const SignUp = () => {
         createUserWithEmailAndPassword(auth, email, password)
         .then((userCredentials) => {
             console.log(userCredentials)
+
+            // Clear form fields
             setEmail('')
             setPassword('')
             setConfirmPassword('')
@@ -33,6 +37,7 @@ const SignUp = () => {
                 <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
                 <input type="password" placeholder="Confirm Password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
                 <button>Sign Up</button>
+                <button>Sign Up with Google </button>
             </form>
         </div>
         </>
