@@ -13,7 +13,7 @@ import AuthDetails from "./AuthDetails";
 
 import { FcGoogle } from "react-icons/fc";
 import { GrFacebook } from "react-icons/gr";
-import Footer from '../Footer/Footer'
+import Footer from "../Footer/Footer";
 const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -54,20 +54,17 @@ const SignIn = () => {
           <button className="signInBtn" type="submit">
             Sign In
           </button>
-          
 
           <h5>Log in in With:</h5>
           <div className="buttonContainer">
-            <FcGoogle onClick={signInWithGoogle}/>
-            <GrFacebook onClick={signInWithFacebook} color={'#4267B2'} />
+            <FcGoogle onClick={signInWithGoogle} />
+            <GrFacebook onClick={signInWithFacebook} color={"#4267B2"} />
           </div>
         </form>
 
         <SignUp />
       </div>
-      
 
-      
       <AuthDetails />
       <Footer />
     </>

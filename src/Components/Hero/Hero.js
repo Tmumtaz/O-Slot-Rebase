@@ -7,15 +7,13 @@ const Hero = (props) => {
         <img alt="Hero Image" src={props.imageName} />
 
         <div className="hero-text">
-        <h1>{props.title}</h1>
-        <a href={props.url} className={props.btnClass}>
-          {props.btnName}
-        </a>
-        <p>{props.text}</p>
+          <h1>{props.title}</h1>
+          <a href={props.url} className={props.btnClass}>
+            {props.btnName}
+          </a>
+          <p>{props.text}</p>
+        </div>
       </div>
-      </div>
-
-      
     </>
   );
 };

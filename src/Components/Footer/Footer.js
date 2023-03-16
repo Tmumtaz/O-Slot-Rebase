@@ -1,11 +1,15 @@
 import "./Footer.scss";
 
+import { BiCopyright } from "react-icons/bi";
+
 const Footer = () => {
   return (
     <div className="footer">
       <div className="top">
         <div>
-          <h1>O' Slot</h1>
+          <h1>
+            O' Slot <BiCopyright />{" "}
+          </h1>
         </div>
         <div>
           <a href="/">
@@ -25,7 +29,7 @@ const Footer = () => {
           <a href="/">Privacy</a>
           <a href="/">Cookies</a>
           <a href="/">Terms & Conditions</a>
-          <a href="/">Contact</a>
+          <a href="/contact">Contact</a>
         </div>
       </div>
     </div>
