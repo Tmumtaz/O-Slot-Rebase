@@ -1,9 +1,7 @@
-
-import "./SignIn.scss";
+import './SignUp.scss'
 import { useState } from "react";
-import {auth, googleProvider} from '../../firebaseUtils'
-import { createUserWithEmailAndPassword, signInWithPopup } from "firebase/auth";
-
+import {auth} from '../../firebaseUtils'
+import { createUserWithEmailAndPassword} from "firebase/auth";
 
 
 const SignUp = () => {
@@ -30,16 +28,14 @@ const SignUp = () => {
     }
     return(
         <>
-        <div>
-            <h1>Sign Up</h1>
+            
             <form onSubmit={handleSignUp}>
+            <h3>No Account? Register Below:</h3>
                 <input type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
                 <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
                 <input type="password" placeholder="Confirm Password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
                 <button>Sign Up</button>
-                <button>Sign Up with Google </button>
             </form>
-        </div>
         </>
     )
 }

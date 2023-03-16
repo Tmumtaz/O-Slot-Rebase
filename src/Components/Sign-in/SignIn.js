@@ -2,26 +2,32 @@ import Navbar from "../NavBar/Navbar";
 import Hero from "../Hero/Hero";
 import "./SignIn.scss";
 import { useState } from "react";
-import {auth, signInWithGoogle} from '../../firebaseUtils'
+import {
+  auth,
+  signInWithGoogle,
+  signInWithFacebook,
+} from "../../firebaseUtils";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import SignUp from "./SignUp";
 import AuthDetails from "./AuthDetails";
 
-
+import { FcGoogle } from "react-icons/fc";
+import { GrFacebook } from "react-icons/gr";
+import Footer from '../Footer/Footer'
 const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const signInHandler = (event) => {
     event.preventDefault();
-    signInWithEmailAndPassword(auth,email,password)
-    .then((userCredentials) => {
-        console.log(userCredentials)
-    }).catch((error) => {
-        console.log(error)
-    })
-
-  }
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredentials) => {
+        console.log(userCredentials);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <>
       <Navbar />
@@ -31,8 +37,8 @@ const SignIn = () => {
       />
 
       <div className="formContainer">
-        <h1>Sign in</h1>
         <form onSubmit={signInHandler}>
+          <h3>Log Into Your Account</h3>
           <input
             type="email"
             placeholder="Email"
@@ -45,15 +51,25 @@ const SignIn = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button type="submit">Sign In</button>
+          <button className="signInBtn" type="submit">
+            Sign In
+          </button>
+          
+
+          <h5>Log in in With:</h5>
+          <div className="buttonContainer">
+            <FcGoogle onClick={signInWithGoogle}/>
+            <GrFacebook onClick={signInWithFacebook} color={'#4267B2'} />
+          </div>
         </form>
-        <button onClick={signInWithGoogle}>Sign In with Google </button>
 
         <SignUp />
-        <AuthDetails />
       </div>
+      
 
-    
+      
+      <AuthDetails />
+      <Footer />
     </>
   );
 };
