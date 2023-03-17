@@ -74,6 +74,12 @@
         background-color: white;
         border-radius: 50px;
         cursor: pointer;
+        padding: 0.1rem;
+
+
+        &:hover{
+          background-color: rgb(197, 197, 197);
+        }
       }
     }
   }

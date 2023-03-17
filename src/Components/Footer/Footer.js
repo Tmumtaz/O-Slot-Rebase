@@ -26,9 +26,9 @@ const Footer = () => {
 
       <div className="bottom">
         <div>
-          <a href="/">Privacy</a>
-          <a href="/">Cookies</a>
-          <a href="/">Terms & Conditions</a>
+          <a href="/privacy">Privacy</a>
+          <a href="/cookies">Cookies</a>
+          <a href="/terms">Terms & Conditions</a>
           <a href="/contact">Contact</a>
         </div>
       </div>
