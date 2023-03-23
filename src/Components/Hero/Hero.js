@@ -4,7 +4,7 @@ const Hero = (props) => {
   return (
     <>
       <div className={props.cName}>
-        <img alt="Hero Image" src={props.imageName} />
+        <img alt="Hero" src={props.imageName} />
 
         <div className="hero-text">
           <h1>{props.title}</h1>
