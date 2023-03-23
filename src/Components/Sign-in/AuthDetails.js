@@ -21,11 +21,12 @@ const AuthDetails = () => {
 
   const signOutHandler = () => {
     signOut(auth)
-      .then(() => {
+      .then(res => {
+        console.log(res);
         console.log("sign out was successfull");
       })
-      .catch((error) => {
-        console.log(error);
+      .catch(err => {
+        console.log(err.message);
       });
   };
 
@@ -44,3 +45,4 @@ const AuthDetails = () => {
 };
 
 export default AuthDetails;
+//auth/email-already-exists, auth/invalid-display-name (must be non-empty string), auth/invalid-email (must be string), auth/invalid-password (must be string with at least 6 characters), auth/user-not-found

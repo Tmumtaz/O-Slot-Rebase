@@ -54,6 +54,7 @@ const SignIn = () => {
           <button className="signInBtn" type="submit">
             Sign In
           </button>
+          <p className="error pink-text center-align"></p>
 
           <h5>Log in in With:</h5>
           <div className="buttonContainer">
