@@ -14,7 +14,60 @@ import AuthDetails from "./AuthDetails";
 import { FcGoogle } from "react-icons/fc";
 import { GrFacebook } from "react-icons/gr";
 import Footer from "../Footer/Footer";
-const SignIn = () => {
+import { useFormik } from "formik";
+
+
+//below is Kewin's added code
+
+const initialValues = {
+  email: '',
+  password: ''
+  // confirmPassword: ''
+}
+
+const onSubmit = values => {
+  console.log('Form data', values)
+}
+
+const validate =  values => {
+  // values.email values.password values.confirmPassword
+  // errors.email errors.password errors.confirmPassword
+  // errors.email = 'This field is required'
+
+  let errors = {}
+
+  if(!values.email) {
+    errors.email = 'Required'
+  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+    errors.email = 'Invalid email format'
+  }
+
+  if(!values.password) {
+    errors.password = 'Required'
+  }
+
+  // if(!values.confirmPassword) {
+  //   errors.confirmPassword = 'Required'
+  // }
+
+
+  return errors
+}
+
+function SignIn() {
+  const formik = useFormik({
+    initialValues,
+    onSubmit,
+    validate
+  })
+
+  console.log('Form errors', formik.errors)
+
+
+//above is Kewin's added code
+
+
+// const SignIn = () => { Kewin disabled this for now
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -36,21 +89,36 @@ const SignIn = () => {
         imageName={require("../../Assets/signUp.jpg")}
       />
 
-      <div className="formContainer">
-        <form onSubmit={signInHandler}>
-          <h3>Log Into Your Account</h3>
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
+      <div>
+      <form onSubmit={formik.handleSubmit}>
+        <div className="formContainer">
+          {/* <form onSubmit={signInHandler}> */}
+            <h3>Log Into Your Account</h3>
+            <input
+              type="email"
+              placeholder="Email"
+              name="email"
+              onChange={formik.handleChange}
+              value={formik.values.email}
+            />
+            {formik.errors.email ? (
+              <div className='error'>{formik.errors.email}</div>
+            ) : null}
+        </div>
+
+        <div>
           <input
             type="password"
             placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            name="password"
+            onChange={formik.handleChange}
+            value={formik.values.password}
           />
+          {formik.errors.password ? (
+            <div className='error'>{formik.errors.password}</div>
+          ) : null}
+        </div>
+
           <button className="signInBtn" type="submit">
             Sign In
           </button>
