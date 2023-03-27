@@ -27,10 +27,18 @@ const SignUp = () => {
             resetFormFields();
         })
         .catch((error) => {
-          if (error.code === "auth/email-already-in-use") {
-            alert("Account Already Exists");
-          } else {
-            console.log("user creation encountered an error:", error.message);
+          switch(error.code){
+            case "auth/email-already-in-use":
+              alert("Account Already Exists")
+              break;
+            case "auth/invalid-email":
+              alert("Please Enter a Valid Email Address")
+              break;
+            case "auth/weak-password":
+              alert("Invalid Password: Must be at least 6 characters")
+              break;
+            default:
+              console.log("User creation encoutered an error:", error.message)
           }
         })
     }
