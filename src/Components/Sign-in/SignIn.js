@@ -18,14 +18,31 @@ const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const resetFormFields = () => {
+    setEmail('')
+    setPassword('')
+  }
+
+
   const signInHandler = (event) => {
     event.preventDefault();
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredentials) => {
         console.log(userCredentials);
+        resetFormFields();
       })
+      
       .catch((error) => {
-        console.log(error);
+        switch (error.code) {
+          case "auth/wrong-password":
+            alert("incorrect password for email");
+            break;
+          case "auth/user-not-found":
+            alert("no user associated with this email");
+            break;
+          default:
+            console.log(error);
+        }
       });
   };
   return (

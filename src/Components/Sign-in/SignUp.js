@@ -10,6 +10,12 @@ const SignUp = () => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('')
 
+    const resetFormFields = () => {
+      setEmail('')
+      setPassword('')
+      setConfirmPassword('')
+    }
+
     const handleSignUp = (event) => {
         event.preventDefault();
         // form validations 
@@ -18,12 +24,14 @@ const SignUp = () => {
             console.log(userCredentials)
 
             // Clear form fields
-            setEmail('')
-            setPassword('')
-            setConfirmPassword('')
+            resetFormFields();
         })
         .catch((error) => {
-            console.log(error)
+          if (error.code === "auth/email-already-in-use") {
+            alert("Account Already Exists");
+          } else {
+            console.log("user creation encountered an error:", error.message);
+          }
         })
     }
     return(
