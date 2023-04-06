@@ -4,7 +4,7 @@ import { Route, Routes } from "react-router";
 import Home from "./Components/Routes/Home";
 import About from "./Components/Routes/About/About";
 import Service from "./Components/Routes/Book/Service/Service";
-import Staff from "./Components/Routes/Book/Staff";
+import Staff from "./Components/Routes/Book/Staff/Staff";
 import Calender from "./Components/Routes/Book/Calender";
 import Details from "./Components/Routes/Book/Details";
 import ConfirmationPage from "./Components/Routes/Book/ConfirmationPage";
@@ -53,7 +53,7 @@ function App() {
   const [staffs, setStaffs] = useState([
     {
       id: 1,
-      name: "ABC",
+      name: "Staff 1",
       description:
         "1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vitae varius lectus. Curabitur sit amet ex gravida erat.",
       time_slot: [
@@ -69,7 +69,7 @@ function App() {
     },
     {
       id: 2,
-      name: "DEF ",
+      name: "Staff 2 ",
       description:
         "2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vitae varius lectus. Curabitur sit amet ex gravida erat.",
       time_slot: [
@@ -85,7 +85,7 @@ function App() {
     },
     {
       id: 3,
-      name: "GHI",
+      name: "Staff 3",
       description:
         "3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vitae varius lectus. Curabitur sit amet ex gravida erat.",
       time_slot: [
@@ -101,7 +101,7 @@ function App() {
     },
     {
       id: 4,
-      name: "KLM",
+      name: "Staff 4",
       description:
         "4 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vitae varius lectus. Curabitur sit amet ex gravida erat.",
       time_slot: [

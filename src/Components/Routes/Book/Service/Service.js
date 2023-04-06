@@ -36,7 +36,7 @@ const Service = (props) => {
           <h2>Select A Service</h2>
           <div className="service-item-container">
             {services.map((item) => (
-              <div className="service-item">
+              <div key={item.id} className="service-item">
                 <div className="service-details-container">
                   <div className="service-details-title">
                     <h4>{item.name}</h4>
