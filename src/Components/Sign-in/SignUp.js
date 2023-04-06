@@ -18,7 +18,6 @@ const SignUp = () => {
 
     const handleSignUp = (event) => {
         event.preventDefault();
-        // form validations 
         createUserWithEmailAndPassword(auth, email, password)
         .then((userCredentials) => {
             console.log(userCredentials)

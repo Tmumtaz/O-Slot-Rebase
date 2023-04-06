@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Route, Routes } from "react-router";
 import Home from "./Components/Routes/Home";
 import About from "./Components/Routes/About/About";
-import Service from "./Components/Routes/Book/Service";
+import Service from "./Components/Routes/Book/Service/Service";
 import Staff from "./Components/Routes/Book/Staff";
 import Calender from "./Components/Routes/Book/Calender";
 import Details from "./Components/Routes/Book/Details";
