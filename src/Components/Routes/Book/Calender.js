@@ -5,7 +5,6 @@ import 'react-calendar/dist/Calendar.css';
 function Calender(props) {
   const {selectedDate, setSelectedDate, selectedTime, setSelectedTime, selectedStaff, setSelectedStaff, staffs, setStaffs} = props;
 
-  console.log(selectedDate)
   //Minimum date to today
   const minDate = new Date();
 
@@ -15,12 +14,14 @@ function Calender(props) {
 
   function handleDateChange(date) {
     setSelectedDate(date);
-    console.log(selectedDate)
   }
 
   function handleTime(event){
-    setSelectedTime(event.target.value);
-    console.log(selectedDate, " " ,selectedTime)
+    const temp = (JSON.parse(event.target.value));
+    setSelectedTime(temp.time);
+    console.log(temp.isBooked)
+      temp.isBooked = !(temp.isBooked)
+      console.log(temp.isBooked)
   }
 
   const handleContinue = (event) => {
@@ -39,8 +40,8 @@ function Calender(props) {
         maxDate={maxDate}
       />
       <div className='time_slot'>
-        {selectedStaff.time_slot.map((time,index) => (
-          <button key={index} value={time} onClick={handleTime}>{time}</button>
+        {selectedStaff.timeSlot.map((timeS,index) => (
+          <button key={index} value={JSON.stringify(timeS)} onClick={handleTime}>{timeS.time}</button>
         ))}
       </div>
       <button onClick={(event) => handleContinue(event)}><Link to="/Details">Continue</Link></button>

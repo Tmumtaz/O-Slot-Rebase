@@ -21,7 +21,6 @@ const Service = (props) => {
     event.preventDefault();
     const value = event.target.value;
     setSelectedService(value);
-    console.log(value);
   }
 
   const handleContinue = (event) => {

@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Route, Routes } from "react-router";
 import Home from "./Components/Routes/Home";
 import About from "./Components/Routes/About/About";
@@ -13,109 +13,23 @@ import SignIn from "./Components/Sign-in/SignIn";
 import Privacy from "./Components/Routes/Privacy/Privacy";
 import Cookies from "./Components/Routes/Cookies/Cookies";
 import Terms from "./Components/Routes/TermsAndConditions";
+import { loadDB } from "./Components/Database/Read";
 
 function App() {
-  const [services, setServices] = useState([
-    {
-      id: 1,
-      name: "Haircut",
-      price: 35,
-      description:
-        "1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vitae varius lectus. Curabitur sit amet ex gravida erat.",
-      moreInfo: false,
-    },
-    {
-      id: 2,
-      name: "Beard ",
-      price: 20,
-      description:
-        "2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vitae varius lectus. Curabitur sit amet ex gravida erat.",
-      moreInfo: false,
-    },
-    {
-      id: 3,
-      name: "Head Massage",
-      price: 25,
-      description:
-        "3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vitae varius lectus. Curabitur sit amet ex gravida erat.",
-      moreInfo: false,
-    },
-    {
-      id: 4,
-      name: "Hair Styling",
-      price: 10,
-      description:
-        "4 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vitae varius lectus. Curabitur sit amet ex gravida erat.",
-      moreInfo: false,
-    },
-  ]);
+  const [services, setServices] = useState([]);
+  const [staffs, setStaffs] = useState([]);
+  
+  useEffect(() => {
+    (async () => {
+      //Load the database
+      const dataFromDB = await loadDB();
+      setServices(dataFromDB.services);
+      setStaffs(dataFromDB.staffs)
+      // setIsLoading(false);
+    })(); //IIFE
+  }, []);
 
-  const [staffs, setStaffs] = useState([
-    {
-      id: 1,
-      name: "Staff 1",
-      description:
-        "1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vitae varius lectus. Curabitur sit amet ex gravida erat.",
-      time_slot: [
-        "10.00 am",
-        "11.00 am",
-        "12.00 pm",
-        "02.00 pm",
-        "03.00 pm",
-        "04.00 pm",
-        "05.00 pm",
-        "06.00 pm",
-      ],
-    },
-    {
-      id: 2,
-      name: "Staff 2 ",
-      description:
-        "2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vitae varius lectus. Curabitur sit amet ex gravida erat.",
-      time_slot: [
-        "10.00 am",
-        "11.00 am",
-        "12.00 pm",
-        "02.00 pm",
-        "03.00 pm",
-        "04.00 pm",
-        "05.00 pm",
-        "06.00 pm",
-      ],
-    },
-    {
-      id: 3,
-      name: "Staff 3",
-      description:
-        "3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vitae varius lectus. Curabitur sit amet ex gravida erat.",
-      time_slot: [
-        "10.00 am",
-        "11.00 am",
-        "12.00 pm",
-        "02.00 pm",
-        "03.00 pm",
-        "04.00 pm",
-        "05.00 pm",
-        "06.00 pm",
-      ],
-    },
-    {
-      id: 4,
-      name: "Staff 4",
-      description:
-        "4 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vitae varius lectus. Curabitur sit amet ex gravida erat.",
-      time_slot: [
-        "10.00 am",
-        "11.00 am",
-        "12.00 pm",
-        "02.00 pm",
-        "03.00 pm",
-        "04.00 pm",
-        "05.00 pm",
-        "06.00 pm",
-      ],
-    },
-  ]);
+
 
   // Variables for service, staff , time slot: Story Point 14 can be done by displaying these vairables
   const [showDescription, setShowDescription] = useState(null);

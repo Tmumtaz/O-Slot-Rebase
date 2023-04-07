@@ -11,6 +11,7 @@ const Home = () => {
         btnName="Book Now"
         btnClass="book"
         imageName = {require("../../Assets/HomeHero.jpg")}
+        url = '/service'
          />
          <Footer />
         </>
