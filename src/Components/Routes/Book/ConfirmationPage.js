@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom"; 
+import { saveDB } from '../../Database/Write';
 
 
 function ConfirmationPage(props) {
@@ -7,9 +8,20 @@ function ConfirmationPage(props) {
    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
    const navigate = useNavigate();
 
-   function handlePayment(event){
+   async function handlePayment(event){
            window.confirm("Are you sure?")
            alert("Appointment Booked!")
+           await saveDB({
+                selectedService: selectedService,
+                selectedStaff: selectedStaff.name,
+                selectedTime: selectedTime,
+                selectedDate: selectedDate,
+                contact: contact,
+                email: email,
+                firstName: fname,
+                lastName: lname,
+                notes: appointmentNotes
+           });
            setContact("");
            setEmail("");
            setFname("");
