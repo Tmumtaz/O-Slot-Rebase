@@ -1,15 +1,34 @@
 import React from 'react';
 import { Outlet} from "react-router-dom";
-import { useNavigate } from "react-router-dom";  
+import { useNavigate } from "react-router-dom";
+import emailjs from 'emailjs-com';  
 
 function Details(props) {
-    const {contact, setContact, email, setEmail, fname, lname, setFname, setLname, appointmentNotes, setAppointmentNotes, allDetails} = props
+    const {contact, setContact, email, setEmail, fname, lname, setFname, setLname, appointmentNotes, setAppointmentNotes, allDetails, selectedStaff, selectedTime, selectedDate,selectedService} = props
     const navigate = useNavigate();
 
     function handleSubmit(event){
         event.preventDefault()
+        const templateParams = {
+            fname: fname,
+            email: email,
+            date: selectedDate.toString(),
+            time: selectedTime,
+            service: selectedService,
+            staff: selectedStaff.name
+          };
+          const serviceId = 'service_i6c5mua'; 
+          const templateId = 'template_qlqri5k';
+          const userId = 'BRLjCluhadKTuBOPG'; 
+        
         if( contact && email && fname && lname !== "") {
-            console.log(contact, email, fname ,lname, appointmentNotes);
+            emailjs.send(serviceId, templateId, templateParams, userId)
+            .then((response) => {
+              console.log('Email sent!', response.status, response.text);
+            }, (error) => {
+              console.log('Error sending email:', error);
+            });
+            
             navigate("/Confirmation Page")
         }
         else {

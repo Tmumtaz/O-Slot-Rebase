@@ -106,6 +106,10 @@ function App() {
               setLname={setLname}
               appointmentNotes={appointmentNotes}
               setAppointmentNotes={setAppointmentNotes}
+              selectedService={selectedService}
+              selectedStaff={selectedStaff}
+              selectedDate={selectedDate}
+              selectedTime={selectedTime}
             />
           }
         />
