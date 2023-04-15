@@ -17,8 +17,9 @@
     margin-top: 2rem;
     .time-slot-button{
         margin: 10px 10px;
-        background-color: blue;
-        color: white;
+        background-color: rgba(0, 0, 0, 0.13);
+        color: black;
+        font-weight: bold;
       border-radius: 13px;
       padding: 1rem;
       border: none;
@@ -26,11 +27,10 @@
       width: 20%;
 
       &:hover{
-        color: blue;
-        text-decoration: underline;
+       
         font-weight: bold;
-        background-color: white;
-        border: 2px solid blue;
+       
+        border: 2px solid black;
       }
     }
   }
