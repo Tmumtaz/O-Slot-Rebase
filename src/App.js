@@ -7,7 +7,7 @@ import Service from "./Components/Routes/Book/Service/Service";
 import Staff from "./Components/Routes/Book/Staff/Staff";
 import Calender from "./Components/Routes/Book/Calender/Calender";
 import Details from "./Components/Routes/Book/Details/Details";
-import ConfirmationPage from "./Components/Routes/Book/ConfirmationPage";
+import ConfirmationPage from "./Components/Routes/Book/Confirmation/ConfirmationPage";
 import Contact from "./Components/Routes/Contact/Contact";
 import SignIn from "./Components/Sign-in/SignIn";
 import Privacy from "./Components/Routes/Privacy/Privacy";
