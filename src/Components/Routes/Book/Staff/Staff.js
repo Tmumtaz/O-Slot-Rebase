@@ -19,7 +19,6 @@ function Staff(props) {
 
   const handleContinue = (event) => {
     event.preventDefault();
-    console.log(selectedStaff);
   };
 
   return (
