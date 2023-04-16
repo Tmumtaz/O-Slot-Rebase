@@ -7,7 +7,7 @@ const Home = () => {
         <>
         <Navbar />
         <Hero cName="hero"
-        title="Start Your Jounrey"
+        title="Start Your Journey"
         btnName="Book Now"
         btnClass="book"
         imageName = {require("../../Assets/HomeHero.jpg")}
