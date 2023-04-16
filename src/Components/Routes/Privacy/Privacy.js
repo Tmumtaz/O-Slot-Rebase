@@ -14,25 +14,27 @@ const Privacy = () => {
       <h1>Privacy Policy</h1>
       <div className="content-container">
         <div className="text-container">
-          <h2>Heading 1</h2>
+          <h2>Introduction</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur.
+            By using our website, you agree to give us some of your information. We will store this information and process it for the purposes of, including, but not limited to, marketing, account creation, and any other legal requirements we have.
+            Information we may collect include:<br></br>
+            First and last name<br></br>
+            Email addresses<br></br>
+            Phone numbers<br></br>
+            Billing addresses<br></br>
+            Credit card information<br></br>
+            Date of birth<br></br>
+            The times and dates you accessed our website<br></br><br></br>
           </p>
         </div>
         <div className="text-container">
-          <h2>Heading 1</h2>
+          <h2>Third Parties</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur.
+            You agree that we will sell your data to third parties such as marketing agencies for the purposes of advertising.<br></br>
+            Cookies<br></br>
+            By using our website, you agree that we will store cookies with your personal information on it on your device. Please see our Cookie Policy.<br></br>
+            Opt-Out<br></br>            
+            You may opt-out of parts of this privacy policy by contacting us at privacy@O-Slot.com. You may also request a copy of your data. You may also request to have your data modified.
           </p>
         </div>
       </div>
